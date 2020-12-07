@@ -22,10 +22,9 @@ or add
 to the require section of your `composer.json` file.
 
 
-Usage
+Использование
 -----
 
-Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \alex290\datetimepicker\AutoloadExample::widget(); ?>```
+<?= $form->field($model, 'username')->widget(alex290\datetimepicker\Datepicker::className(),[]) ?>```
