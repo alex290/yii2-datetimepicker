@@ -25,6 +25,7 @@ to the require section of your `composer.json` file.
 Использование
 -----
 
+поле $datetime должен быть формата intiger
 
 ```php
-<?= $form->field($model, 'username')->widget(alex290\datetimepicker\Datepicker::className(),[]) ?>```
+<?= $form->field($model, 'datetime')->widget(alex290\datetimepicker\Datepicker::className(),[]) ?>```
