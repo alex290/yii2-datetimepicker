@@ -29,13 +29,22 @@ class Datepicker extends InputWidget
         }
 
         $dateValue = Yii::$app->formatter->asDate($this->value, 'php:Y-m-d').'T'.Yii::$app->formatter->asTime($this->value, 'php:H:i');
+        // debug($this->field->name);
 
         $inputOption = $this->options;
         $outOption = $this->options;
         $inputOption['class'] .= ' inputTime';
+        $inputOption['type'] = 'hidden';
         $outOption['type'] = 'datetime-local';
         $outOption['class'] .= ' outDateTime';
-        $html .= Html::hiddenInput($this->name, $this->value, $inputOption);
+
+        if ($this->hasModel()) {
+            // return Html::activeInput($this->model, $this->attribute, $this->options);
+            $html .= Html::activeInput($this->name, $this->model, $this->attribute, $inputOption);
+        } else {
+            $html .= Html::input($this->name, $this->value, $inputOption);
+        }
+        
         $html .= Html::textInput('datetimepicker', $dateValue, $outOption);
         $html .= '</div>';
         return $html;
