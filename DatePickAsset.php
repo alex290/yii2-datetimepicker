@@ -20,18 +20,6 @@ class DatePickAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
     ];
 
-    public function init() {
-        parent::init();
-        \Yii::$app->assetManager->bundles['yii\\bootstrap\\BootstrapAsset'] = [
-            'css' => [],
-            'js' => []
-        ];
-        \Yii::$app->assetManager->bundles['yii\\bootstrap\\BootstrapPluginAsset'] = [
-            'css' => [],
-            'js' => []
-        ];
-    }
 }
